@@ -1,0 +1,85 @@
+<ion-view view-title="Registro" >
+
+    <ion-nav-bar class="guibo-nav-bar">
+        <ion-nav-back-button class="button-guibo-assertive"></ion-nav-back-button>
+    </ion-nav-bar>
+    
+    <ion-content>
+      <div class="card">
+          <div class="item item-icon-left item-text-wrap">
+              <i class="icon ion-edit color-ico-view"></i>
+                ¡Estas a un paso de ser parte de <strong>Guibo</strong>!. Ahora solo rellena tus datos personales.
+          </div>
+      </div>
+      <form name="registrationForm" novalidate ng-submit="registrationForm.$valid && nextPage()">
+        
+        <div class="padding">
+          <label class="item item-input">
+            <i class="icon ion-person placeholder-icon guibo-icon"></i>
+            <input type="text" name="fullName" placeholder="Ingresa tu nombre completo"
+            ng-model="person.fullName" required >            
+          </label>
+          <span ng-show="registrationForm.$submitted && registrationForm.fullName.$error.required" class="item guibo-error">Ingrese un nombre</span>
+
+          <div class="item item-select" >
+                <div class="input-label">
+                    &nbsp;
+                </div>
+                <select ng-options="documentType.name for documentType in documentTypes" ng-model="tmpData.documentType" 
+                  ng-change="inputValidationSize()">
+                  <option value="" disabled selected>Seleccione un documento de identificación</option>
+                </select>
+          </div>
+
+          <label class="item item-input">
+            <i class="icon ion-card placeholder-icon guibo-icon"></i>
+            <input type="text" name="documentNumber" placeholder="Ingresa un documento de identificación"
+            ng-model="person.documentNumber" required maxlength="20" ng-maxlength="tmpData.documentLenght" ng-minlength="tmpData.documentLenght">
+          </label>
+          <span ng-show="registrationForm.$submitted && registrationForm.documentNumber.$error.required" class="item guibo-error">Ingrese un documento de identifcación</span>
+          <span ng-show="registrationForm.$submitted && (registrationForm.documentNumber.$error.minlength || registrationForm.documentNumber.$error.maxlength)" class="item guibo-error">Tamaño invalido para el documento de identificación</span>          
+
+          <label class="item item-input">
+            <i class="icon ion-locked placeholder-icon guibo-icon"></i>
+            <input type="password" name="password" placeholder="Ingresa tu contraseña"
+            ng-model="user.password" required minlength="8" maxlength="14" contains-number contains-uppercase contains-lowercase contains-specialchar compare-to="tmpData.repassword">
+          </label>
+          <span ng-show="registrationForm.$submitted && registrationForm.password.$error.required" class="item guibo-error">Ingrese una contraseña</span>
+          <span ng-show="registrationForm.$submitted && registrationForm.password.$error.containsNumber && !registrationForm.password.$error.required" class="item guibo-error">Debe contener un número</span>
+          <span ng-show="registrationForm.$submitted && registrationForm.password.$error.containsUppercase && !registrationForm.password.$error.required && !registrationForm.password.$error.containsNumber" class="item guibo-error">Debe contener una letra mayuscula</span>
+          <span ng-show="registrationForm.$submitted && registrationForm.password.$error.containsLowercase && !registrationForm.password.$error.required && !registrationForm.password.$error.containsNumber && !registrationForm.password.$error.containsUppercase" class="item guibo-error">Debe contener una letra minuscula</span>
+          <span ng-show="registrationForm.$submitted && registrationForm.password.$error.containsLowercase && !registrationForm.password.$error.required && !registrationForm.password.$error.containsNumber && !registrationForm.password.$error.containsUppercase" class="item guibo-error">Debe contener una letra minuscula</span>
+          <span ng-show="registrationForm.$submitted && registrationForm.password.$error.containsSpecialchar && !registrationForm.password.$error.required && !registrationForm.password.$error.containsNumber && !registrationForm.password.$error.containsUppercase && !registrationForm.password.$error.containsLowercase" class="item guibo-error">Debe contener caracteres especiales</span>
+          <span ng-show="registrationForm.$submitted && registrationForm.password.$error.minlength &&!registrationForm.password.$error.containsSpecialchar && !registrationForm.password.$error.required && !registrationForm.password.$error.containsNumber && !registrationForm.password.$error.containsUppercase && !registrationForm.password.$error.containsLowercase" class="item guibo-error">Debe contener al menos 8 caracteres</span>
+
+          <label class="item item-input">
+            <i class="icon ion-locked placeholder-icon guibo-icon"></i>
+            <input type="password" name="repassword" maxlength="14" ng-model="tmpData.repassword" placeholder="Repite la contraseña" required >
+          </label>
+          <span ng-show="registrationForm.$submitted && registrationForm.repassword.$error.required" class="item guibo-error">Repita la contraseña</span>
+          <span ng-show="registrationForm.$submitted && registrationForm.password.$error.compareTo && !registrationForm.repassword.$error.required" class="item guibo-error">Las contraseñas no coinciden</span>
+
+          <div class="item item-select" >
+              <div class="input-label">
+                  &nbsp;
+              </div>
+              <select ng-options="question for question in questions" ng-model="user.secretQuestion">
+                <option value="" disabled selected>Seleccione una pregunta secreta</option>
+              </select>
+          </div>
+
+          <label class="item item-input">
+            <i class="icon ion-key placeholder-icon guibo-icon"></i>
+            <input type="text" name="answer" placeholder="Responde la pregunta" ng-model="user.secretAnswer" required >
+          </label>
+          <span ng-show="registrationForm.$submitted && registrationForm.answer.$error.required" class="item guibo-error">Ingrese una  secreta es obligatorio</span>
+          
+        </div>
+        
+        <button class="button button-block button-guibo-login">Continuar</button>
+          
+      </form>
+        
+  </ion-content>
+    
+</ion-view>

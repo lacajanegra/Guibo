@@ -1,0 +1,30 @@
+<ion-view view-title="Perfil" >
+
+    <ion-content>
+        <div class="hero slide-up">
+            <div class="content">
+                <h4 class="profile-title" style="margin-right:1em;">
+                    <a class="light" href="#/app/profile/edit">
+                        {{user.person.name}}
+                        <i class="icon ion-edit"></i>
+                    </a>
+                </h4>
+            </div>
+        </div>        
+
+        <h4 class="content padding double-padding-x">Cuentas</h4>
+        <div class="list notification-list" ng-repeat="(section, accountList) in accountsMap">
+            
+            <a class="item item-avatar item-icon-right"  ng-repeat="account in accountList"
+               ng-href="#/app/bills/account/setting/{{account.id}}">
+                <img ng-src="{{account.logo}}">
+                <h2>{{account.companyName}}</h2>
+                <p>{{account.address}}</p>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+            </a>
+
+        </div>  
+
+    </ion-content>
+
+</ion-view>

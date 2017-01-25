@@ -1,0 +1,58 @@
+<ion-view view-title="Boleta">
+    
+    <ion-content>
+
+
+    <div class="list card">
+        <div class="item item-avatar">
+            <img class="medium-image" src="{{bill.logo}}" width="50%"/>
+            <h2>{{bill.alias}}</h2>
+            <p> Vence en {{getExpirationDays(bill.expirationDate)}} dias</p>
+        </div>
+        <div class="item item-divider center-align">
+            <strong> Mes de {{bill.emissionDate | date:'MMMM'}} <!-- - {{voucher.cost | currency:"S/":0 }} --></strong>
+        </div>
+
+        <div class="item item-body center-align">
+            <div style="margin-top:0px" ng-show="checkDate(bill.expirationDate)">
+                <div  ng-click="showRememberOptions()">
+                           <i class="icon ion-android-calendar font-menu-size font-color-programmed-guibo"></i> Programar
+                </div>
+            </div>
+            <p>
+              <div class="item" style="text-align:left; font-size:13px; border:0" >
+               Consumo Nacional en {{bill.emissionDate | date:"MMMM"}}
+                <span class="item-note">
+                  {{bill.nationalCost}}
+                </span>
+              </div>
+
+              <div class="item" style="text-align:left; font-size:13px" >
+                Consumo Internacional en {{bill.emissionDate | date:"MMMM"}}
+                <span class="item-note">
+                  {{bill.foreignCost}}
+                </span>
+              </div>
+
+              <div class="item" style="text-align:left; font-size:13px" >
+                Máximo Consumo Histórico
+                <span class="item-note">
+                  {{maxConsumption}}
+                </span>
+              </div>
+            </p>
+            <div class="button-bar">
+              <a class="button" ng-class="nationalGraph ? ' button-guibo-login' : ''" 
+                 ng-click="loadGraph(true)">Nacional</a>
+              <a class="button" ng-class="!nationalGraph ? ' button-guibo-login' : ''"
+                 ng-click="loadGraph(false)">Internacional</a>
+            </div>
+            <div class="item item-text-wrap">
+                    <nvd3 options="options" data="data"></nvd3>
+            </div>
+        </div>
+    </div>
+        
+  </ion-content>
+    
+</ion-view>

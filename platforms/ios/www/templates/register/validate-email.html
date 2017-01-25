@@ -1,0 +1,36 @@
+<ion-view view-title="Validacion de Email" >
+
+    <ion-nav-bar class="guibo-nav-bar">
+        <ion-nav-back-button class="button-guibo-assertive"></ion-nav-back-button>
+    </ion-nav-bar>
+    
+    <ion-content>
+    <div class="card">
+          <div class="item item-icon-left item-text-wrap">
+              <i class="icon ion-email color-ico-view"></i>
+                Enviaremos un código tu correo. Con el debes continuar el proceso de registro.
+          </div>
+    </div>
+      <form name="emailForm" novalidate ng-submit="emailForm.$valid && sendConfirmationEmail()">
+        
+        <div class="padding">
+          <label class="item item-input">
+            <i class="icon ion-email placeholder-icon guibo-icon"></i>
+            <input type="email" name="email" placeholder="Ingresa tu correo electrónico"
+            ng-model="person.email" required email-validator>
+          </label>
+          
+          <div class="form-errors" >
+              <div ng-show="emailForm.$submitted && emailForm.email.$error.required" class="guibo-error">El campo correo electrónico es obligatorio</div>
+              
+              <div ng-show="emailForm.$submitted && emailForm.email.$error.emailValidator" class="guibo-error">Formato de email inválido</div>
+          </div>
+        </div>
+        
+        <button class="button button-block button-guibo-login">Continuar</button>
+          
+      </form>
+        
+  </ion-content>
+    
+</ion-view>

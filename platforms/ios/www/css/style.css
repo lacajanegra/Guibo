@@ -1,0 +1,442 @@
+/*FONTS*/
+
+/*ROBOTO*/
+@font-face {
+    font-family: Roboto;
+    font-style: normal;    
+    src: url(../lib/ionic/fonts/roboto/Roboto-Regular.ttf);
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: italic;    
+    src: url(../lib/ionic/fonts/roboto/Roboto-Italic.ttf);
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 100;
+    src: url(../lib/ionic/fonts/roboto/Roboto-Thin.ttf);
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: italic;
+    font-weight: 100;
+    src: url(../lib/ionic/fonts/roboto/Roboto-ThinItalic.ttf);
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    src: url(../lib/ionic/fonts/roboto/Roboto-Light.ttf);     
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: italic;
+    font-weight: 300;
+    src: url(../lib/ionic/fonts/roboto/Roboto-LightItalic.ttf);
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    src: url(../lib/ionic/fonts/roboto/Roboto-Medium.ttf);
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: italic;
+    font-weight: 500;
+    src: url(../lib/ionic/fonts/roboto/Roboto-MediumItalic.ttf);
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    src: url(../lib/ionic/fonts/roboto/Roboto-Bold.ttf);
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: italic;
+    font-weight: bold;
+    src: url(../lib/ionic/fonts/roboto/Roboto-BoldItalic.ttf);
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 900;
+    src: url(../lib/ionic/fonts/roboto/Roboto-Black.ttf);     
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: italic;
+    font-weight: 900;
+    src: url(../lib/ionic/fonts/roboto/Roboto-BlackItalic.ttf);
+}
+
+/*ROBOTO CONDENSED*/
+@font-face {
+    font-family: RobotoCondensed;
+    font-style: normal;    
+    src: url(../lib/ionic/fonts/roboto/RobotoCondensed-Regular.ttf);
+}
+
+@font-face {
+    font-family: RobotoCondensed;
+    font-style: italic;    
+    src: url(../lib/ionic/fonts/roboto/RobotoCondensed-Italic.ttf);
+}
+
+@font-face {
+    font-family: RobotoCondensed;
+    font-style: normal;
+    font-weight: 300;
+    src: url(../lib/ionic/fonts/roboto/RobotoCondensed-Light.ttf);
+}
+
+@font-face {
+    font-family: RobotoCondensed;
+    font-style: italic;
+    font-weight: 300;
+    src: url(../lib/ionic/fonts/roboto/RobotoCondensed-LightItalic.ttf);
+}
+
+@font-face {
+    font-family: RobotoCondensed;
+    font-style: normal;
+    font-weight: bold;
+    src: url(../lib/ionic/fonts/roboto/RobotoCondensed-Bold.ttf);     
+}
+
+@font-face {
+    font-family: RobotoCondensed;
+    font-style: italic;
+    font-weight: bold;
+    src: url(../lib/ionic/fonts/roboto/RobotoCondensed-BoldItalic.ttf);
+}
+
+/* PROJECT */
+* {
+  font-family: "Roboto","Helvetica Neue", "Segoe UI", sans-serif; 
+}
+body {
+	font-family: Roboto !important;
+	font-style: normal !important;
+}
+.hero{
+   background: url('../img/profile.png') no-repeat, -moz-linear-gradient(left, rgba(255,25,40,1) 0%, rgba(255,76,91,1) 50%, rgba(255,25,40,1) 100%);
+background: url('../img/profile.png') no-repeat. -webkit-gradient(left top, right top, color-stop(0%, rgba(255,25,40,1)), color-stop(50%, rgba(255,76,91,1)), color-stop(100%, rgba(255,25,40,1)));
+background: url('../img/profile.png') no-repeat, -webkit-linear-gradient(left, rgba(255,25,40,1) 0%, rgba(255,76,91,1) 50%, rgba(255,25,40,1) 100%);
+background: url('../img/profile.png') no-repeat, -o-linear-gradient(left, rgba(255,25,40,1) 0%, rgba(255,76,91,1) 50%, rgba(255,25,40,1) 100%);
+background: url('../img/profile.png') no-repeat, -ms-linear-gradient(left, rgba(255,25,40,1) 0%, rgba(255,76,91,1) 50%, rgba(255,25,40,1) 100%);
+background: url('../img/profile.png') no-repeat, linear-gradient(to right, rgba(255,25,40,1) 0%, rgba(255,76,91,1) 50%, rgba(255,25,40,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff1928', endColorstr='#ff1928', GradientType=1 );
+ background-size:300px;
+ background-position: center; 
+   //background-image: url('../img/profile.png'); 
+
+}
+.gradient-background-profile{
+    background: rgba(255,25,40,1);
+background: -moz-linear-gradient(left, rgba(255,25,40,1) 0%, rgba(255,76,91,1) 50%, rgba(255,25,40,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,25,40,1)), color-stop(50%, rgba(255,76,91,1)), color-stop(100%, rgba(255,25,40,1)));
+background: -webkit-linear-gradient(left, rgba(255,25,40,1) 0%, rgba(255,76,91,1) 50%, rgba(255,25,40,1) 100%);
+background: -o-linear-gradient(left, rgba(255,25,40,1) 0%, rgba(255,76,91,1) 50%, rgba(255,25,40,1) 100%);
+background: -ms-linear-gradient(left, rgba(255,25,40,1) 0%, rgba(255,76,91,1) 50%, rgba(255,25,40,1) 100%);
+background: linear-gradient(to right, rgba(255,25,40,1) 0%, rgba(255,76,91,1) 50%, rgba(255,25,40,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff1928', endColorstr='#ff1928', GradientType=1 );
+}
+.bar-footer-home{
+    padding-top: 2em;
+    height:64px !important; 
+    max-width: none !important;
+}
+.padding-home-button{
+    padding-top: 11px !important;    
+}
+.guibo-nav-bar {
+	background-color : #ff1929 !important;
+	color: white !important;    
+}
+
+.guibo-nav-bar .title {
+    margin: 0;
+    font-size: 16px !important;
+}
+
+.header-color{
+    color: white !important;
+}
+.vert-center{
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    position: absolute !important;
+    margin:0 auto;
+    width:100%;
+}
+.strong-color{
+    color:#484848;
+}
+.check-notification{
+    color:#33cd5f;
+    font-size: 2em;
+    padding-left: -5px;
+}
+.inbox-style{
+    background-color: #44b7d8;
+    color: white;
+}
+.title-walkthrough h4{
+    color:#ff1929 !important;
+}
+.title-walkthrough{
+    color:#ff1929 !important;
+}
+.content-walkthrough{
+    color: #424242;
+    padding:0 1.5em 0 1.5em;
+}
+/*MENU*/
+.item-without-href{
+        display: block;
+    padding: 23px 49px 23px 16px !important;
+}
+.menu-spacing{
+    padding:0.5em 0em 0.5em;
+}
+.font-menu-size{
+    font-size: 1.3em;
+    margin-right:0.5em;
+}
+.wasnt-read-color{
+    color:#ff8f93;
+}
+.color-ico-view{
+    color:#F99898;
+}
+/*Home Slide*/
+
+.slider {
+  height: 100%;
+}
+.slider-slide {
+  padding-top: 40px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.guibo-slide {
+	width:100%;
+	height:80%;
+	text-align:center;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 300;
+}
+
+.slider-pager-page {
+    color: #ff1929 !important;
+    fill: blue;
+    stroke: blue;
+    background-color: transparent;
+}
+
+.slider-pager-page.active {
+    fill: #ff1929;
+    stroke: red;
+    color: #ff1929 !important;
+    background-color: transparent;
+}
+.font-color-inbox{
+    color:#468dfb;
+}
+.font-color-ready{
+    color:#36cc65;
+}
+.font-color-reprogrammed{
+    color:#ffbe00;
+}
+.font-color-expired{
+    color:#ff1929;
+}
+
+.slider-slide {
+    height: 100%;
+}
+.center-align{
+    text-align: center;
+}
+.medium-image{
+    width: 50%;
+}
+.slider-pager {
+    /*position: fixed;*/
+    bottom:5px;
+}
+/*Footer*/
+.guibo-footer {
+	padding: 0;
+}
+/*Alert*/
+.popup-title {
+    color:#424242;
+}
+.popup-body {
+    color:#313131;
+}
+.popup-buttons .button {
+    background-color: #ff1929;
+    color:white;
+    font-weight: 800;
+}
+
+.popup-buttons .button.button-positive.activated {
+    background-color: #ff404d;
+}
+
+
+/*Buttons*/
+.button-forgot-password{
+    color: #6b6b6b !important;
+    margin-top: 0 !important;
+    font-weight: 300;
+    font-size: 1em;
+/*    text-decoration: underline;*/
+}
+.button-register{
+    color: #ff1929 !important;
+    font-weight: 300;
+}
+.button-guibo-assertive {
+    //background-color : #46fb7f !important;
+    color: white !important;
+    border-radius: 0px !important;
+    font-size: 18px !important;
+    //margin: 0px !important;
+}
+.button-guibo-login {
+    background-color : #ff1929 !important;
+    color: white !important;
+    border-radius: 0px !important;
+    font-size: 18px !important;
+    margin: 0px !important;
+    max-width: none !important;
+    height: inherit !important;
+    max-height: none !important;
+}
+.button-guibo-expired {
+    background-color : #ff1929 !important;
+    color: white !important;
+    border-radius: 0px !important;
+    font-size: 18px !important;
+    margin: 0px !important;
+}
+.button-guibo-green{
+    background-color : #64d6a7 !important;
+    color: white !important;
+    border-radius: 0px !important;
+    font-size: 18px !important;
+    margin: 0px !important;
+}
+.button-ready-guibo{
+    background-color : #33cd5f !important;
+    color: white !important;
+    border-radius: 0px !important;
+    font-size: 18px !important;
+    margin: 0px !important;
+}
+.font-color-ready-guibo{
+    color:#23a949;
+}
+.button-inbox-guibo{
+    background-color : #11c1f3 !important;
+    color: white !important;
+    border-radius: 0px !important;
+    font-size: 18px !important;
+    margin: 0px !important;
+}
+.font-color-inbox-guibo{
+    color:#11c1f3;
+}
+.button-programmed-guibo{
+    background-color : #ffc900 !important;
+    color: white !important;
+    border-radius: 0px !important;
+    font-size: 18px !important;
+    margin: 0px !important;
+}
+.font-color-programmed-guibo{
+    color:#ffc900;
+}
+.button-expired-guibo{
+    background-color : #ef473a !important;
+    color: white !important;
+    border-radius: 0px !important;
+    font-size: 18px !important;
+    margin: 0px !important;
+}
+.font-color-expired-guibo{
+    color:#ef473a;
+}
+.button-guibo-yellow{
+    background-color : #fbcd46 !important;
+    color: white !important;
+    border-radius: 0px !important;
+    font-size: 18px !important;
+    margin: 0px !important;
+}
+.font-color-normal{
+    color:#6d6d6d;
+}
+
+.font-color-white{
+    color:#FFFFFF;
+}
+
+.button-guibo-passive {
+    color : white;
+    background-color: #f99898;
+    border-radius: 0 !important;
+    font-size: 18px !important;
+    margin: 0px !important;
+    max-width: none !important;
+    height: inherit !important;
+    max-height: none !important;
+}
+
+.button-clear-guibo {    
+    color: #f99898 !important;
+}
+
+/*Select*/
+.item-select select{
+    max-width: 100% !important;    
+}
+
+/*ERROR*/
+.guibo-error {
+    color: #FB4A46;
+
+    padding: 4px;
+    font-size: 12px;
+    margin-top:0.5em;
+}
+
+/*PROFILE*/
+.profile-title {
+    float:right; 
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; margin: 5px;
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+    
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="lib/ionic-material/dist/ionic.material.min.css" rel="stylesheet">
+    <link href="lib/nvd3/nv.d3.min.css" rel="stylesheet"> 
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+    
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <script src="lib/ng-cordova/ng-cordova.min.js"></script>
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- nvd3 library -->
+    <script src="lib/nvd3/d3.min.js"></script>
+    <script src="lib/nvd3/nv.d3.min.js"></script>
+    <script src="lib/nvd3/angular-nvd3.min.js"></script>
+
+    <!-- ionic material library -->    
+    <script src="lib/ionic-material/dist/ionic.material.min.js"></script>    
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+  </head>
+  <body ng-app="starter">
+
+    <ion-nav-view></ion-nav-view>
+
+
+    <!-- DAO -->
+    <script type="text/javascript" src="js/dao/db-manager.js"></script>
+
+    <script type="text/javascript" src="js/dao/company-dao.js"></script>
+    <script type="text/javascript" src="js/dao/product-dao.js"></script>
+    <script type="text/javascript" src="js/dao/bills-dao.js"></script>
+    <script type="text/javascript" src="js/dao/account-dao.js"></script>
+    <script type="text/javascript" src="js/dao/settings-dao.js"></script>
+    <script type="text/javascript" src="js/dao/stats-dao.js"></script>
+    <script type="text/javascript" src="js/dao/category-dao.js"></script>    
+
+    <!-- UTILS -->
+    <script type="text/javascript" src="js/utils/constants.js"></script>
+    <script type="text/javascript" src="js/utils/validations.js"></script>
+    <script type="text/javascript" src="js/utils/dbCreator.js"></script>
+    <script type="text/javascript" src="js/utils/loading.js"></script>
+    <script type="text/javascript" src="js/utils/locale.js"></script>
+
+    <!-- SERVICES -->
+    <script type="text/javascript" src="js/services/auth.js"></script>
+    <script type="text/javascript" src="js/services/account.js"></script>
+    <script type="text/javascript" src="js/services/bill.js"></script>
+    <script type="text/javascript" src="js/services/database.js"></script>
+    <script type="text/javascript" src="js/services/sort.js"></script>
+    <script type="text/javascript" src="js/services/stats.js"></script>
+    <script type="text/javascript" src="js/services/device.js"></script>
+
+    <!-- CONTROLLERS -->
+    <script type="text/javascript" src="js/controllers/home.js"></script>
+
+    <script type="text/javascript" src="js/controllers/register/validate-email.js"></script>
+    <script type="text/javascript" src="js/controllers/register/confirmation-token.js"></script>
+    <script type="text/javascript" src="js/controllers/register/registration.js"></script>
+    <script type="text/javascript" src="js/controllers/register/terms.js"></script>
+
+    <script type="text/javascript" src="js/controllers/walkthrough.js"></script>
+    <script type="text/javascript" src="js/controllers/login.js"></script>
+    <script type="text/javascript" src="js/controllers/forgot-password.js"></script>
+
+    <script type="text/javascript" src="js/controllers/menu.js"></script>
+
+    <script type="text/javascript" src="js/controllers/bills/inbox.js"></script>
+    <script type="text/javascript" src="js/controllers/bills/ready.js"></script>
+    <script type="text/javascript" src="js/controllers/bills/expired.js"></script>
+    <script type="text/javascript" src="js/controllers/bills/programmed.js"></script>
+    <script type="text/javascript" src="js/controllers/bills/all.js"></script>
+
+    <script type="text/javascript" src="js/controllers/detail/service.js"></script>
+    <script type="text/javascript" src="js/controllers/detail/transactional.js"></script>
+    <script type="text/javascript" src="js/controllers/settings.js"></script>
+
+    <script type="text/javascript" src="js/controllers/addAccount/qr.js"></script>
+    <script type="text/javascript" src="js/controllers/addAccount/enroll.js"></script>
+    <script type="text/javascript" src="js/controllers/addAccount/confirm.js"></script>
+
+    <script type="text/javascript" src="js/controllers/graphs.js"></script>
+    <script type="text/javascript" src="js/controllers/notification-management.js"></script>
+
+    <script type="text/javascript" src="js/controllers/profile/profile.js"></script>
+    <script type="text/javascript" src="js/controllers/profile/edit.js"></script>
+    <script type="text/javascript" src="js/controllers/profile/changePassword.js"></script>
+
+    <script type="text/javascript" src="js/controllers/stats.js"></script>
+    <script type="text/javascript" src="js/controllers/notification.js"></script>
+
+
+  </body>
+</html>

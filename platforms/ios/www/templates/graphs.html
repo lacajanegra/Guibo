@@ -1,0 +1,32 @@
+<ion-view view-title="Historial de GUIBOS" >    
+    
+    <ion-content>
+        
+        <div class="padding">
+            <div class="button-bar" >
+              <a class="button" ng-class="isPie ? ' button-guibo-login' : ''" 
+                 ng-click="loadPieChart()">Por Servicio</a>
+              <a class="button" ng-class="!isPie ? ' button-guibo-login' : ''"
+                 ng-click="loadBarChart()">Mensual</a>
+            </div>
+            <div class="card" ng-show="isPie">
+              <div class="item item-icon-left item-text-wrap">
+              <i class="icon ion-pie-graph color-ico-view"></i>
+                Esta es la representación gráfica de tus pagos según tipo de servicio (mes actual).
+              </div>
+            </div>
+            <div class="card" ng-show="!isPie">
+              <div class="item item-icon-left item-text-wrap">
+              <i class="icon ion-pie-graph color-ico-view"></i>
+                Esta es la representación gráfica de tus pagos en los últimos meses.
+              </div>
+            </div>
+            <br/>
+
+            <div class="item item-text-wrap">
+                <nvd3 options="options" data="data"></nvd3>
+            </div>
+            
+        </div>
+    </ion-content>
+</ion-view>

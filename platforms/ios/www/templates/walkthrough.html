@@ -1,0 +1,61 @@
+
+<div class="padding">
+
+    <ion-slide-box on-slide-changed="slideChanged(index)">
+      <ion-slide class="guibo-slide">
+      <p>
+        <strong class="title-walkthrough"><h4>¡Gracias por escoger Guibo!</h4></strong>
+      </p>
+        <p class="content-walkthrough">
+          Hola, Soy <strong>GUIBO</strong>. Te ayudaré con tus recibos y mantendre siempre tus cuentas claras.
+        </p>
+        <div>
+          <img src="img/guibo-slide2.png" width="40%">
+        </div>
+      </ion-slide>
+      <ion-slide class="guibo-slide">
+      <p>
+        <strong class="title-walkthrough"><h4>1) Agregar cuenta</h4></strong>
+      </p>
+        <p class="content-walkthrough">
+          Para poder utilizar GUIBO primero debes insertar cuentas a través de el codigo QR que aparece en todas tus boletas de pago
+        </p>
+        <div class="card" style="box-shadow:none !important">
+          <div class="item item-text-wrap" >
+               <img src="img/scan-code.png" width="70%">
+          </div>
+        </div>
+      </ion-slide>
+      <ion-slide class="guibo-slide">
+      <strong class="title-walkthrough"><h4>2) Titular de la cuenta</h4></strong>
+        <p class="content-walkthrough">
+          Al realizar esta acción te llevará a un formulario donde deberas de insertar un documento de identificación del titular de la cuenta
+        </p>
+        <div class="card" style="box-shadow:none !important">
+          <div class="item item-text-wrap" >
+               <img src="img/code-read.png" width="70%">
+          </div>
+        </div>
+      </ion-slide>
+      <ion-slide class="guibo-slide">
+
+       
+        <strong class="title-walkthrough"><h4>¡Listo!</h4></strong>
+        <p class="content-walkthrough">
+          Posteriormente podrás disfrutar de todas la funcionalidades que la aplicación tiene para darte
+        </p>
+        <div class="card" style="box-shadow:none !important">
+          <div class="item item-text-wrap" >
+               <img src="img/bussiness.png" width="70%">
+          </div>
+
+        </div>
+        <div ng-show="slideIndex == 3">
+          <button class="button button-block button-guibo-login" ng-click="startApp()" 
+            ng-show="slideIndex == 3">Empezar con GUIBO</button>
+         </div>
+      </ion-slide>
+    </ion-slide-box>
+
+</div>
+    

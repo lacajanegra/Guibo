@@ -1,0 +1,53 @@
+<ion-view view-title="Boleta">
+    
+    <ion-content>
+        <br/>
+        <div style="text-align : center">
+            <h3 class="guibo-default-color">{{voucher.alias}}</h3>
+            <div><img class="full-image" src="{{voucher.logo}}"/></div>
+            <h3 class="guibo-default-color"> {{voucher.emissionDate | date:"MMMM"}} - {{voucher.cost | currency}} </h3>
+            <p>{{voucher.email}}</p>
+            
+            <div class="item item-button-right">
+                <p>
+                    Vence en {{getExpirationDays(voucher.expirationDate)}} dias
+                </p>
+                <button class="button button-positive" ng-click="showRememberOptions()">
+                    <i class="icon ion-ios-clock-outline"></i>
+                </button>
+            </div>
+            
+            <div class="item" style="text-align : left">
+                Detalle de consumo
+                <span class="item-note">
+                    Cantidad 
+                </span>
+                <br/>
+                {{voucher.unit}} consumidos en {{voucher.emissionDate | date:"MMMM"}}
+                <span class="item-note">
+                    {{voucher.consumption}}
+                </span>
+                
+            </div>
+            
+            <div class="card">
+                <div class="item item-divider" style="text-align : left">
+                    <p>Consumo histórico</p>
+                    <p>Valor máximo: {{maxConsumption}}</p>
+                </div>
+                <div class="item item-text-wrap">
+                    <nvd3 options="options" data="data"></nvd3>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div>
+            <a class="button button-block button-guibo-assertive" href="#/app/inbox/account/settings/{{voucher.accountId}}">
+                  Configurar Cuenta
+            </a>
+        </div>
+        
+    </ion-content>
+    
+</ion-view>

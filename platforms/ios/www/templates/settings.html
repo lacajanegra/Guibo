@@ -1,0 +1,43 @@
+<ion-view view-title="Configurar Cuenta" >
+    <ion-content>
+
+    <div class="list">
+
+        <div class="item item-button-right" style="background-color: #fdfdfd; padding-left:1em">
+            <strong><h2 style="font-size:20px;"><i class="icon ion-arrow-right-b color-ico-view"> </i> {{settings.alias}}</h2></strong>
+            <button class="button button-guibo-login" ng-click="editAlias()">
+              <i class="icon ion-compose color-ico-view" style="color:white;"></i>
+            </button>
+        </div>
+
+        <div class="item item-icon-left" href="#">
+            <i class="icon ion-person"></i>
+            {{user.person.email}}
+        </div>
+
+        <div class="item item-icon-left" href="#">
+            <i class="icon ion-home"></i>
+            {{settings.address}}
+
+        </div>
+
+        <ion-toggle ng-model="tmpInfo.notification" toggle-class="toggle-assertive" style="padding-top: 7px;"><i class="icon ion-android-notifications" style="font-size: 33px; margin-right: 15px;"></i>Notificaciones</ion-toggle>
+
+        <div class="item item-input item-select" >
+            <i class="icon ion-android-list" style="font-size: 33px; margin-right: 15px;"></i>
+            <div class="input-label">Categoría: </div>
+            <select ng-init="tmpInfo.category.description" ng-options="category.description for category in categories" ng-model="tmpInfo.category">
+            </select>
+        </div>
+        <br>
+        <button class="button button-block button-guibo-login" ng-click="saveSettings()" >
+                    Confirmar configuración
+        </button>
+        <div>
+            <button class="button button-block button-clear button-dark ion-close" ng-click="removeSetting()" style="color: #ff3543; text-decoration: underline;"> Eliminar Cuenta</button>
+        </div>
+    </div>
+
+    </ion-content>
+    
+</ion-view>

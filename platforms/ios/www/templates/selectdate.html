@@ -1,0 +1,37 @@
+<ion-modal-view>
+    <ion-header-bar class="bar guibo-nav-bar">
+        <h1 class="title header-color">Seleccione la fecha</h1>
+        <button class="button button-clear button-primary header-color" ng-click="modal.hide()">Cancelar</button>
+    </ion-header-bar>
+    <ion-content class="padding">
+
+      <div class="card">
+        <div class="item item-icon-left item-text-wrap">
+          <i class="icon ion-android-calendar color-ico-view"></i>
+            Ingresa una fecha entre <strong>{{currentDate | date:'yyyy-MM-dd'}}</strong> y <strong>{{selectDateBill.expirationDate | date:'yyyy-MM-dd'}}</strong>.
+        </div>
+      </div>
+
+      <form name="dateForm" novalidate ng-submit="dateForm.$valid && selectDateProgrammed()">
+
+        <div class="list">
+          <label class="item item-input">
+            <i class="icon ion-calendar placeholder-icon guibo-icon"></i>
+            <input name="date" type="date" min="{{ currentDate | date:'yyyy-MM-dd'}}" placeholder="Fecha" 
+                max="{{selectDateBill.expirationDate | date:'yyyy-MM-dd'}}" ng-model="selectDateBill.programmedDate">
+          </label>
+
+          <span ng-show="dateForm.$submitted && dateForm.date.$error.min" class="item guibo-error">
+            Ingresa una fecha entre {{currentDate | date:'yyyy-MM-dd'}} y {{selectDateBill.expirationDate | date:'yyyy-MM-dd'}}
+          </span>
+
+          <span ng-show="dateForm.$submitted && !dateForm.date.$error.min && dateForm.date.$error.max" class="item guibo-error">
+            Ingresa una fecha entre {{currentDate | date:'yyyy-MM-dd'}} y {{selectDateBill.expirationDate | date:'yyyy-MM-dd'}}
+          </span>          
+
+          <button class="button button-full button-guibo-login">Confirmar</button>
+        </div>
+      </form>
+     
+    </ion-content>
+</ion-modal-view>

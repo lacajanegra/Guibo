@@ -1,0 +1,60 @@
+<ion-view view-title="Editar">
+
+    <ion-content>        
+        <div class="hero slide-up">
+            <div class="content" style="top:25%">
+                <div class="avatar" style="background-image: url('img/profile.png');"></div>
+            </div>
+        </div>
+
+        <form name="registrationForm" novalidate ng-submit="registrationForm.$valid && nextPage()">
+        
+        <div class="padding">
+          <label class="item item-input">
+            <i class="icon ion-person placeholder-icon guibo-icon"></i>
+            <input type="text" name="fullName" placeholder="Ingresa tu nombre completo"
+            ng-model="person.fullName" required >            
+          </label>
+          <span ng-show="registrationForm.$submitted && registrationForm.fullName.$error.required" class="item guibo-error">Nombre Completo</span>
+
+          <div class="item item-select" >
+                <div class="input-label">
+                    &nbsp;
+                </div>
+                <select ng-options="documentType.name for documentType in documentTypes" ng-model="tmpData.documentType" 
+                  ng-change="inputValidationSize()">
+                  <option value="" disabled selected>Documento de identificación</option>
+                </select>
+          </div>
+
+          <label class="item item-input">
+            <i class="icon ion-card placeholder-icon guibo-icon"></i>
+            <input type="text" name="documentNumber" placeholder="Ingresa un documento de identificación"
+            ng-model="person.documentNumber" required maxlength="20" ng-maxlength="tmpData.documentLenght" ng-minlength="tmpData.documentLenght">
+          </label>
+          <span ng-show="registrationForm.$submitted && registrationForm.documentNumber.$error.required" class="item guibo-error">Ingrese un documento de identifcación</span>
+          <span ng-show="registrationForm.$submitted && (registrationForm.documentNumber.$error.minlength || registrationForm.documentNumber.$error.maxlength)" class="item guibo-error">Tamaño invalido para el documento de identificación</span>
+
+          <div class="item item-select" >
+              <div class="input-label">
+                  &nbsp;
+              </div>
+              <select ng-options="question for question in questions" ng-model="user.secretQuestion">
+                <option value="" disabled selected>Pregunta secreta</option>
+              </select>
+          </div>
+
+          <label class="item item-input">
+            <i class="icon ion-key placeholder-icon guibo-icon"></i>
+            <input type="text" name="answer" placeholder="Responde la pregunta" ng-model="user.secretAnswer" required >
+          </label>
+          
+        </div>
+          
+      </form>
+
+      <button class="button button-block button-guibo-login" ng-click="moreOptions()">Más Configuraciones</button>
+
+    </ion-content>
+
+</ion-view>

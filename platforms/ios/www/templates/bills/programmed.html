@@ -1,0 +1,45 @@
+<ion-view view-title="Guibos Programados" >
+    
+    <ion-content>
+        <div ng-show="!voucherList.length">
+            <div class="card" style="text-align: center; margin-top: 0">
+                  <div class="item item-text-wrap">
+                    <i class="icon-left ion-sad-outline" style="color:#E91E1E; font-size: 2em;"></i>
+                    <p style="margin-top: 1em;"> No tienes cuentas en tu casilla.</p>
+                  </div>
+            </div>
+        </div>
+
+        <ion-list class="list" can-swipe="true" ng-repeat="(sectionTitle, bills) in voucherMap">
+
+            <ion-item class="item item-divider guibo-section">
+                {{ sectionTitle }}
+            </ion-item>
+
+            <ion-item ng-repeat="bill in bills" class="item item-avatar" ng-click="goToDetail(bill)" >
+                
+                <img src="{{bill.logo}}">
+                
+                <span class="item-note" >
+                    <div>
+                        {{bill.programedDate | date:'dd/MM/yy'}}
+                        <i class="ion-android-more-vertical" style="color:#E91E1E; font-size: 2em; position: absolute; top: 15px;margin-left: 15px;"></i>
+                    </div>
+                </span>
+                
+                <h2 class="guibo-default-color">{{bill.alias}}</h2>
+                <p>{{getExpirationDays(bill.expirationDate)}}</p>
+                
+                <ion-option-button class="button-inbox-guibo" ng-click="inboxStatus(bill, sectionTitle)">
+                    <i class="icon ion-archive"> Casilla </i>
+                </ion-option-button>
+                <ion-option-button class="button-ready-guibo" ng-click="readyStatus(bill, sectionTitle)">
+                    <i class="icon ion-archive"> Archivadas </i>
+                </ion-option-button>
+                
+            </ion-item>
+        </ion-list>
+        
+    </ion-content>
+    
+</ion-view>

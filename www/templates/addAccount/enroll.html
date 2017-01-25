@@ -1,0 +1,32 @@
+<ion-view view-title="Agregar Cuenta">
+    
+    <ion-content>
+        <div class="card">
+              <div class="item item-icon-left item-text-wrap">
+                <i class="icon ion-checkmark-circled color-ico-view"></i>
+                  Detectamos que el código corresponde a la siguiente cuenta:
+              </div>
+        </div>
+        <form name="enrollForm" novalidate ng-submit="enrollForm.$valid && enroll()">
+            <div class="padding">
+
+                <div class="item item-avatar">
+                    <img src="{{company.logo}}">
+                    <h2>{{company.name}}</h2>
+                    <p>{{company.address}}</p>
+                </div>
+
+              <label class="item item-input">
+                <i class="icon ion-card placeholder-icon guibo-icon"></i>
+                <input type="text" name="holderIdentification" placeholder="Ingresa DNI del Titular"
+                ng-model="viewData.holderIdentification" required>
+              </label>
+              <span ng-show="enrollForm.$submitted && enrollForm.holderIdentification.$error.required" class="item guibo-error">Ingrese el DNI del titular</span>
+            </div>
+
+            <button class="button button-block button-guibo-login">Agregar</button>
+          
+      </form>
+    </ion-content>
+    
+</ion-view>

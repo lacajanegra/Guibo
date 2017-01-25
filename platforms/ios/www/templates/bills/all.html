@@ -1,0 +1,47 @@
+<ion-view view-title="Todos Mis Guibos" >
+    
+    <ion-content on-swipe-down="showSearch()">
+        <div ng-show="!voucherList.length">
+            <div class="card" style="text-align: center; margin-top: 0">
+                  <div class="item item-text-wrap">
+                    <i class="icon-left ion-sad-outline" style="color:#E91E1E; font-size: 2em;"></i>
+                    <p style="margin-top: 1em;"> No tienes cuentas en tu casilla.</p>
+                  </div>
+            </div>
+        </div>
+
+        <div class="item item-input-inset" ng-show="search" >
+            <label class="item-input-wrapper">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="search" placeholder="Filtrar" ng-model="searchQuery">
+            </label>
+            <button class="button button-small" ng-click="showSortOptions()">
+                <i class="icon ion-android-funnel"></i>
+            </button>
+        </div>
+
+        <ion-list class="list" ng-repeat="(sectionTitle, bills) in voucherMap">
+
+            <ion-item class="item item-divider guibo-section">
+                {{ sectionTitle }}
+            </ion-item>
+
+            <ion-item ng-repeat="bill in bills | filter:searchQuery" class="item item-avatar" ng-click="goToDetail(bill)" >
+                
+                <img src="{{bill.logo}}">
+                
+                <span class="item-note" ng-class="{ true: 'new-bill'}" >
+                    <div class="vert-center" >
+                        <i class="icon ion-record wasnt-read-color"></i>
+                    </div>
+                </span>
+                
+                <h2 class="strong-color"><strong>{{bill.alias}}</strong></h2>
+                <p>{{getExpirationDays(bill.expirationDate)}}</p>
+                
+            </ion-item>
+        </ion-list>
+        
+    </ion-content>
+    
+</ion-view>

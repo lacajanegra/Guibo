@@ -1,0 +1,36 @@
+<ion-view view-title="Cambiar Contraseña">
+
+  <ion-content>
+    <form name="loginForm" novalidate ng-submit="loginForm.$valid && loginUser()">
+        
+        <div class="padding">
+
+          <div class="card" ng-show="!isPie">
+            <div class="item item-icon-left item-text-wrap">
+              <i class="icon ion-close-circled color-ico-view"></i>
+                Por favor ingresa tu constraseña para confirmar la completa eliminacion de tu cuenta.
+            </div>
+          </div>
+
+          <label class="item item-input">
+            <i class="icon ion-person placeholder-icon guibo-icon"></i>
+            <input type="text" name="username" placeholder="Correo electrónico/Documento de identificación"
+            ng-model="user.username" required>
+          </label>
+          <span ng-show="loginForm.$submitted && loginForm.username.$error.required" class="item guibo-error">Ingrese su correo electrónico o documento de identificación</span>
+
+          <label class="item item-input">
+            <i class="icon ion-locked placeholder-icon guibo-icon"></i>
+            <input type="password" name="password" placeholder="Contraseña"
+            ng-model="user.password" required>
+          </label>
+          <span ng-show="loginForm.$submitted && loginForm.password.$error.required" class="item guibo-error">Ingrese su contraseña</span>
+
+        </div>
+
+        <button class="button button-block button-guibo-login">Eliminar</button>
+        
+      </form>
+  </ion-content>
+
+</ion-view>

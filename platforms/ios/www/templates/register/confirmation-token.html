@@ -1,0 +1,36 @@
+<ion-view view-title="Codigo de Verificacion" >
+
+    <ion-nav-bar class="guibo-nav-bar">
+        <ion-nav-back-button class="button-guibo-assertive"></ion-nav-back-button>
+    </ion-nav-bar>
+    
+  <ion-content>
+    <div class="card">
+          <div class="item item-icon-left item-text-wrap">
+              <i class="icon ion-paper-airplane color-ico-view"></i>
+                Ingresa el código que hemos enviado a tu correo.
+          </div>
+    </div>
+      <form name="tokenForm" novalidate ng-submit="tokenForm.$valid && validateToken()">
+        
+        <div class="padding">
+          <label class="item item-input">
+            <i class="icon ion-ios-barcode-outline placeholder-icon guibo-icon"></i>
+            <input type="text" name="token" placeholder="Ingresa el código de confirmación"
+            ng-model="user.token" required minlength="6" maxlength="6" token-validator>
+          </label>
+          
+          <div class="form-errors" >
+              <div ng-show="tokenForm.$submitted && tokenForm.token.$error.required" class="guibo-error">El campo código de verificación es obligatorio</div>
+              <div ng-show="tokenForm.$submitted && (tokenForm.token.$error.minlength || tokenForm.token.$error.maxlength)" class="guibo-error">El tamaño del código es invalido</div>
+              <div ng-show="tokenForm.$submitted && tokenForm.token.$error.tokenValidator" class="guibo-error">El formato del código es invalido</div>
+          </div>
+        </div>
+        
+        <button class="button button-block button-guibo-login">Continuar</button>
+          
+      </form>
+        
+  </ion-content>
+    
+</ion-view>

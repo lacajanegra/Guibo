@@ -1,0 +1,39 @@
+<ion-view view-title="Gestionar Notificaciones" >
+    
+    <ion-content>
+
+           <div class="card">
+              <div class="item item-divider" style="text-align:center">
+                {{user.person.email}}
+              </div>
+              <div class="item item-icon-left item-text-wrap">
+                <i class="icon ion-android-notifications color-ico-view"></i>
+                  Activa o desactiva las notificaciones que te enviamos por Guibo.
+              </div>
+            </div>
+
+        <div class="list notification-list" ng-repeat="(section, accountList) in accountsMap">
+            
+            <a class="item item-avatar"  ng-repeat="account in accountList"
+               ng-click="enableNotification(account)">
+                <img ng-src="{{account.logo}}">
+                <h2>{{account.companyName}}</h2>
+                <p>{{account.address}}</p>
+
+                <span class="item-note" ng-class="{ true : 'new-bill'}" >                    
+                    <div class="vert-center" ng-show="account.notification" style="right: -90%;">
+                        <i class="icon ion-checkmark-circled check-notification"></i>
+                    </div>
+                </span>
+
+            </a>            
+
+        </div>            
+              
+        <a class="button button-block  button-guibo-login" ng-click="changeNotificationStatus()">
+            Confirmar
+        </a>
+    
+    </ion-content>    
+    
+</ion-view>

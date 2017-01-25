@@ -1,0 +1,43 @@
+<ion-view view-title="Login" >
+
+    <ion-nav-bar class="guibo-nav-bar">
+        <ion-nav-back-button class="button-guibo-assertive"></ion-nav-back-button>
+    </ion-nav-bar>
+    
+    <ion-content>
+      <div style="text-align:center">
+          <div class="padding">
+              <img src="img/logo_guibo.png" width="15%">
+          </div>
+      </div>
+      <form name="loginForm" novalidate ng-submit="loginForm.$valid && loginUser()">
+        
+        <div class="padding">
+          <label class="item item-input">
+            <i class="icon ion-person placeholder-icon guibo-icon"></i>
+            <input type="text" name="username" placeholder="Correo electrónico/Documento de identificación"
+            ng-model="user.username" required>
+          </label>
+          <span ng-show="loginForm.$submitted && loginForm.username.$error.required" class="item guibo-error">Ingrese su correo electrónico o documento de identificación</span>
+
+          <label class="item item-input">
+            <i class="icon ion-locked placeholder-icon guibo-icon"></i>
+            <input type="password" name="password" placeholder="Contraseña"
+            ng-model="user.password" required>
+          </label>
+          <span ng-show="loginForm.$submitted && loginForm.password.$error.required" class="item guibo-error">Ingrese su contraseña</span>
+
+        </div>
+        
+        <a href="#/forgot-password" class="button button-block button-clear button-forgot-password">
+          ¿No recuerdas tu contraseña?</a>
+
+        <button class="button button-block button-guibo-login">Iniciar Sesión</button>
+
+        <a href="#/validate-email" class="button button-block button-clear button-register ">
+        No tengo cuenta, quiero registrarme</a> 
+      </form>
+        
+  </ion-content>
+    
+</ion-view>

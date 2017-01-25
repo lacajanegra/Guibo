@@ -1,0 +1,91 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content>
+    <ion-nav-bar class="guibo-nav-bar">
+      <ion-nav-back-button class="button-guibo-assertive">
+      </ion-nav-back-button>
+        <ion-nav-buttons side="left">
+            <button class="button button-icon button-clear button-light ion-navicon" menu-toggle="left">
+            </button>
+        </ion-nav-buttons>
+
+        <ion-nav-buttons side="right" >
+            <div>
+                <button class="button button-icon button-clear button-light" ng-show="isBox()" ng-click="showSettingsOptions()" >
+                    <i class="icon ion-ios-gear font-color-white"></i>
+                </button>
+            </div>
+        </ion-nav-buttons>
+
+    </ion-nav-bar>
+
+    <ion-nav-view name="appContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+    <ion-header-bar class="bar-stable">      
+    <div style="padding-left:0.6em; padding-top:3px;">
+
+              <img src="img/logo-guibo-horizontal-gris.png" width="40%">
+
+      </div>
+    </ion-header-bar>
+    <ion-content>
+        <div ng-show="showMenuMoya">
+            <ion-list>
+
+                <ion-item menu-close href="#/app/bills/inbox" class="item-menu menu-spacing">
+                    <i class="icon ion-archive font-menu-size font-color-inbox-guibo"></i>
+                    Nuevos GUIBOS
+                </ion-item>
+                <ion-item menu-close href="#/app/bills/ready" class="item-menu menu-spacing">
+                    <i class="icon ion-android-checkmark-circle font-menu-size font-color-ready-guibo"></i>
+                    GUIBOS Pagados
+                </ion-item>
+                <ion-item menu-close href="#/app/bills/programmed" class="item-menu menu-spacing">
+                    <i class="icon ion-android-calendar font-menu-size font-color-programmed-guibo"></i>
+                    GUIBOS Programados
+                </ion-item>
+                <ion-item menu-close href="#/app/bills/expired" class="item-menu menu-spacing">
+                    <i class="icon ion-alert-circled font-menu-size font-color-expired-guibo"></i>
+                    GUIBOS Vencidos
+                </ion-item>
+
+                <ion-item menu-close href="#/app/bills/all" class="item-menu menu-spacing">
+                    <i class="icon ion-alert-circled font-menu-size font-color-expired-guibo"></i>
+                    Todos Mis GUIBOS
+                </ion-item>
+
+                <ion-item href="#/app/graphs" menu-close class="item-menu menu-spacing">
+                    <i class="icon ion-pie-graph font-menu-size font-color-normal"></i>
+                    Historial de GUIBOS
+                </ion-item>                
+
+                <ion-item ng-click="logout()" class="item-menu menu-spacing item-without-href">
+                    <i class="icon ion-power font-menu-size font-color-normal"></i>
+                    Salir de GUIBO
+                </ion-item>
+
+            </ion-list>
+        </div>
+        
+        <div ng-show="!showMenuMoya">
+            <ion-list>
+                <ion-item ng-click="hideSettings()" class="item-menu menu-spacing" style='padding-left:1em'>
+                      <i class="icon ion-ios-arrow-back font-menu-size font-color-normal"></i>
+                    Regresar
+                </ion-item>
+                <ion-item menu-close href="#/app/notification-management" class="item-menu menu-spacing">
+                    <i class="icon ion-android-notifications font-menu-size font-color-normal"></i>
+                    Gestionar Notificaciones
+                </ion-item>                
+                <ion-item menu-close href="#/app/add-account/qr" class="item-menu menu-spacing">
+                    <i class="icon ion-plus-circled font-menu-size font-color-normal"></i>
+                    Agregar Cuenta
+                </ion-item>
+                        
+            </ion-list>
+        </div>
+    </ion-content>
+  </ion-side-menu>
+    
+</ion-side-menus>
